@@ -6,7 +6,8 @@ Question: find the sum of all the multiples of 3 or 5 below 1000(clearly not inc
 #Answer: 233168.
 
 #Mathematics vs. Programming
-Well, it's not difficult as a mathematical problem. We realize that 15 is the smallest multiple of 3 and 5, so other multiples are the multiple of 15, such as 30, 45, 60.
+Well, it's not difficult as a mathematical problem. We realize that 15 is the smallest multiple of 3 and 5, so other multiples are 
+the multiple of 15, such as 30, 45, 60.
 ##Mathematical approach
 1. Let's list first 15 numbers:
 1   2   *3*   4   *5*
@@ -41,7 +42,8 @@ Then we just calculate the tuples.
 105 105 105 60
 135 135 135 75 
 ......
-It's clear that the fist three column is the same arithmetic progression *S* and  tolerance is 30, the last column is another arithmetic progression *T*, and tolerance is 15.
+It's clear that the fist three column is the same arithmetic progression *S* and  tolerance is 30, the last column is another 
+arithmetic progression *T*, and tolerance is 15.
 So sum = 3S_66 + T_66 + 2*1995 + 993 -1000
 By the way, arithmeric progression a_n = a_1 + (n-1)*d and S_n = n*a_1 + d*n*(n-1)/2(d is tolerance).
 
