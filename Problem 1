@@ -58,3 +58,5 @@ while counter < 1000
     counter_2++;
     
 sum = sum_1 - sum_2;
+
+Well, the algorithm is not good enough and need to be modified.
