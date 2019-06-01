@@ -52,7 +52,7 @@ variable sum, sum = 0, counter = 1
 while counter < 1000
   if (counter % 3 == 0 || counter % 5 == 0)
     sum += counter;
-    counter++;
+  counter++;
 print sum;  
 
 Well, the algorithm is not good enough and need to be modified.
