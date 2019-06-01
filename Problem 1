@@ -1,0 +1,58 @@
+#Description
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3,5,6 and 9. The sum of these multiples is 23.
+
+Question: find the sum of all the multiples of 3 or 5 below 1000(clearly not include 1000).
+
+#Answer: 233168.
+
+#Mathematics vs. Programming
+Well, it's not difficult as a mathematical problem. We realize that 15 is the smallest multiple of 3 and 5, so other multiples are the multiple of 15, such as 30, 45, 60.
+##Mathematical approach
+1. Let's list first 15 numbers:
+1   2   *3*   4   *5*
+*6*   7   8   *9*   *10*
+11  *12*  13  14  **15**
+**I use the matrix method to name them.**
+Then we find that m[13] + m[32] = m[21] + m[24] = m[15] + m[25] = 15, and the 15th element in this matrix is 15.
+We denote that 
+> 15 15 15 15.(1) 
+And the the sum of the multiples of 3 or 5 below is the sum of these four numbers.
+
+2. Let's list the second 15 numbers.
+16  17  18  19  20
+21  22  23  24  25
+26  27  28  29  30
+So m[13] + [32] = m[21] + m[24] = m[15] + [25] = 45(45 - 15 = 30).
+It's true because every number is bigger 15 that above.
+We denote this 15 numbers 
+> 45 45 45 30.(2)
+
+And 1000 = 66*15 + 10, 
+991 992 993 994 995
+996 997 998 999 (1000)
+the last tuple loss five elements in third row.
+so there are other 64 tuples, the n-th tuple could be denoted as 
+> 15+(n-1)*30 15+(n-1)*30 15+(n-1)*30 15*n.
+
+Then we just calculate the tuples.
+15  15  15  15
+45  45  45  30
+75  75  75  45
+105 105 105 60
+135 135 135 75 
+......
+It's clear that the fist three column is the same arithmetic progression *S* and  tolerance is 30, the last column is another arithmetic progression *T*, and tolerance is 15.
+So sum = 3S_66 + T_66 + 2*1995 + 993 -1000
+By the way, arithmeric progression a_n = a_1 + (n-1)*d and S_n = n*a_1 + d*n*(n-1)/2(d is tolerance).
+
+##Psudocode
+variable sum, sum_1 = 0, sum_2 = 0, counter_1 = counter_2 = 1
+while counter < 1000
+  if (counter_1 % 3 == 0 || counter % 5 == 0)
+    sum_1 += counter_1;
+    counter_1++;
+  if (counter_2 % 15 == 0)
+    sum_2 += counter_2;
+    counter_2++;
+    
+sum = sum_1 - sum_2;
