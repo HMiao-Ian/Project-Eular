@@ -124,5 +124,6 @@ but the 46th is negative,
 > $fib(46)=-1323752223\quad it\quad should\quad be\quad fib(46)=2971215073$
 
 In my laptop, codeblocks, "long" occypy 4 bytes, and $2^{32}-1=4294967296 > fib(46)$. So it should overflow. Then it must be the non-recurrence fibonacci function's error. And I'll continue to find where exactly the error is.
+God, Github hasn't supported Latex.
 
 [EOF]
