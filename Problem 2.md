@@ -62,7 +62,8 @@ long fib(int item)
 
     return fib;
     /*
-    Now, a, b, c represent the first, second, third item in fibonacci sequence.They are aimed to record the former two items because the computation only need the former two items.
+    Now, a, b, c represent the first, second, third item in fibonacci sequence.
+    They are aimed to record the former two items because the computation only need the former two items.
     flag is aimed to indicate that the current fibonacci item should assign itself to a OR b OR c.
     fib is just the fibonacci(item).
     */
